@@ -37,11 +37,11 @@ public class LoginTest {
 //        driver.get("https://www.saucedemo.com/");
 
         // Initialisation du WebDriver et des pages pour Edge
-        WebDriverManager.edgedriver().setup();
-        driver = new EdgeDriver();
-        loginPage = new LoginPage(driver);
-        productsPage = new ProductsPage(driver);
-        driver.get("https://www.saucedemo.com/");
+//        WebDriverManager.edgedriver().setup();
+//        driver = new EdgeDriver();
+//        loginPage = new LoginPage(driver);
+//        productsPage = new ProductsPage(driver);
+//        driver.get("https://www.saucedemo.com/");
     }
 
 
