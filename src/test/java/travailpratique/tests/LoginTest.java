@@ -5,6 +5,7 @@ import com.example.pages.ProductsPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
@@ -22,8 +23,15 @@ public class LoginTest {
     @BeforeMethod
     public void setUp() {
         // Initialisation du WebDriver et des pages
+//        WebDriverManager.chromedriver().setup();
+//        driver = new ChromeDriver();
+//        driver.manage().window().minimize();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");
+        options.addArguments("--disable-gpu");
         WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+        driver = new ChromeDriver(options);
+
         loginPage = new LoginPage(driver);
         productsPage = new ProductsPage(driver);
         driver.get("https://www.saucedemo.com/");
@@ -32,6 +40,7 @@ public class LoginTest {
 //        WebDriverManager.firefoxdriver().setup();
 //        FirefoxOptions options = new FirefoxOptions();
 //        driver = new FirefoxDriver(options);
+        //driver.manage().window().minimize();
 //        loginPage = new LoginPage(driver);
 //        productsPage = new ProductsPage(driver);
 //        driver.get("https://www.saucedemo.com/");
@@ -39,6 +48,7 @@ public class LoginTest {
         // Initialisation du WebDriver et des pages pour Edge
 //        WebDriverManager.edgedriver().setup();
 //        driver = new EdgeDriver();
+        //driver.manage().window().minimize();
 //        loginPage = new LoginPage(driver);
 //        productsPage = new ProductsPage(driver);
 //        driver.get("https://www.saucedemo.com/");
