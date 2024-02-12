@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/elidr/Desktop/Ma session 4/Automatisation 2/tp2/TravalPratiqueV2/TravalPratiqueV2">
+        <classes>
+            <class name="travailpratique.tests.LoginTest">
+                <methods>
+                    <include name="testValidLogin"/>
+                    <include name="testInvalidLogin"/>
+                    <include name="testProductListOrder"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
