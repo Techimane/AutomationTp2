@@ -33,9 +33,10 @@ build/
 
 ### VS Code ###
 .vscode/
-
+/dataSources/
 ### Mac OS ###
 .DS_Store
 
 # Ignorer les java classes
 *.class
+/target
