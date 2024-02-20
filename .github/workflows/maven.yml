@@ -33,5 +33,13 @@ jobs:
       uses : actions/upload-artifact@v2
       with:
        name: rapport de tests
-       path: ${{ github.workspace }}/reports
+       path: ${{ github.workspace }}/target
+    - name: Test Report
+      uses: dorny/test-reporter@v1
+      if: success() || failure()    # run this step even if previous step failed
+      with:
+          name:  Tests            # Name of the check run which will be created
+          path: ${{ github.workspace }}/target/surefire-reports/TEST-TestSuite.xml    # Path to test results
+          reporter: java-junit        # Format of test results
+       
      
